@@ -1,0 +1,20 @@
+python 中 from...import 的用法
+
+
+1、直接调用函数
+
+例子： 
+#函数文件method
+引入 import method / from method import method_name
+用 method.method_name / method_name
+
+2、调用类中的函数
+
+例子：
+#类文件method
+引入 import method / from method import method_name
+用 method.class_name.method_name / class_name.method_name
+
+python 中 import...as.... 的用法
+
+1、别名命名

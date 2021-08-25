@@ -1,0 +1,39 @@
+python 高级特性
+
+1、切片 L[0:3]/L[-1:0] 0可以省略 倒数第一个元素的索引是-1
+list(range(100)) 创建0-99数列
+L[0::3] 每3个取一个
+
+2、迭代 (for...in...)
+    对象是否可以迭代 collections.abc -> Iterable
+    isinstance('abc', Iterable)
+
+3、列表生成式
+    快速生成列表 list(range(0,n));
+    列表生成式 [x*x for x in list(range(0,n)) if x % 2 == 0]
+    if 在后是一个筛选条件，不能待else
+
+4、生成器 generator [一边循环一边计算的机制，为节省大量的存储空间]
+    创建 generator 方法：
+        1、将列表生成式[]改写成() -- next() 打印输出值
+        2、方法中添加yield关键字
+
+5、迭代器
+    可迭代对象 Iterable
+    可以被next()函数调用并不断返回下一个值的对像称为迭代器：Iterator,是一个惰性计算的序列
+    iter() 将Iterable变为Iterator
+    python的for循环本质上就是通过不断调用next()函数实现的
+    for x in [1,2,3,4,5]:
+        pass
+    等价于
+
+    # 获取Iterator对象 
+    it = iter([1,2,3,4,5])
+    #循环
+    while True:
+        try:
+            #获得下一个值
+            x = next(it)
+        expect StopIteration:
+            #遇到StopIteration就退出循环
+            break
